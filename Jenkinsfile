@@ -33,7 +33,7 @@ pipeline {
             steps {
                 dir("${FRONTEND_DIR}") {
                     sh '''
-                       rm -rf node_modules package-lock.json
+                        rm -rf node_modules package-lock.json
                         npm cache clean --force
                         npm install --verbose
                         npm install vite --verbose
@@ -47,7 +47,7 @@ pipeline {
             steps {
                 sh '''
                     sudo rm -rf ${NGINX_DIR}/*
-                    sudo cp -r ${FRONTEND_DIR}/build/* ${NGINX_DIR}/
+                    sudo cp -r ${FRONTEND_DIR}/dist/* ${NGINX_DIR}/
                     sudo chown -R nginx:nginx ${NGINX_DIR}
                 '''
             }
