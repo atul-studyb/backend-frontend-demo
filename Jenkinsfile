@@ -2,17 +2,16 @@ pipeline {
     agent any
 
     environment {
-        JAVA_HOME = "/usr/lib/jvm/java-17-openjdk"
-        MAVEN_HOME = "/usr/share/maven"
+        JAVA_HOME = "/usr/lib/jvm/java-17-openjdk-amd64"
         NODE_ENV = "production"
 
         BACKEND_DIR = "backend"
         FRONTEND_DIR = "frontend"
 
         JAR_NAME = "backend-app.jar"
-        DEPLOY_DIR = "/opt/backend-app"
-        NGINX_DIR = "/var/www/react-app"
-        SERVICE_NAME = "backend-app"
+        DEPLOY_DIR = "/opt/myapp"
+        NGINX_DIR = "/var/www/html"
+        SERVICE_NAME = "myappbackend"
     }
 
     stages {
