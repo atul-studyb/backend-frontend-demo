@@ -3,7 +3,6 @@ pipeline {
 
     environment {
         JAVA_HOME = "/usr/lib/jvm/java-17-openjdk-amd64"
-        NODE_ENV = "production"
 
         BACKEND_DIR = "backend"
         FRONTEND_DIR = "frontend"
@@ -34,9 +33,10 @@ pipeline {
             steps {
                 dir("${FRONTEND_DIR}") {
                     sh '''
-                        rm -rf node_modules package-lock.json
+                       rm -rf node_modules package-lock.json
                         npm cache clean --force
-                        npm install
+                        npm install --verbose
+                        npm install vite --verbose
                         npm run build
                     '''
                 }
