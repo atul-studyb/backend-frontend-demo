@@ -8,7 +8,7 @@ pipeline {
         BACKEND_DIR = "backend"
         FRONTEND_DIR = "frontend"
 
-        JAR_NAME = "backend-app.jar"
+        JAR_NAME = "ems-backend-0.0.1-SNAPSHOT.jar"
         DEPLOY_DIR = "/opt/myapp"
         NGINX_DIR = "/var/www/html"
         SERVICE_NAME = "myappbackend"
@@ -34,6 +34,8 @@ pipeline {
             steps {
                 dir("${FRONTEND_DIR}") {
                     sh '''
+                        rm -rf node_modules package-lock.json
+                        npm cache clean --force
                         npm install
                         npm run build
                     '''
@@ -55,8 +57,7 @@ pipeline {
             steps {
                 sh '''
                     sudo mkdir -p ${DEPLOY_DIR}
-                    sudo cp ${BACKEND_DIR}/target/${JAR_NAME} ${DEPLOY_DIR}/
-                    sudo chown -R appuser:appuser ${DEPLOY_DIR}
+                    sudo cp ${BACKEND_DIR}/target/${JAR_NAME} ${DEPLOY_DIR}/backend.jar
                 '''
             }
         }
