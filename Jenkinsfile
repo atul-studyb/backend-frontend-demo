@@ -48,7 +48,6 @@ pipeline {
                 sh '''
                     sudo rm -rf ${NGINX_DIR}/*
                     sudo cp -r ${FRONTEND_DIR}/dist/* ${NGINX_DIR}/
-                    sudo chown -R nginx:nginx ${NGINX_DIR}
                 '''
             }
         }
