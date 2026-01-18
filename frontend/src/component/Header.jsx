@@ -7,7 +7,7 @@ function Header() {
         <>
             <nav className='navbar bg-body-primary col'>
                 <div className="container">
-                    <a className="navbar-brand navi" target='_blank' href=''>Employee Management Systems new</a>
+                    <a className="navbar-brand navi" target='_blank' href=''>Employee Management Systems DevOps</a>
                 </div>
             </nav>
         </>
