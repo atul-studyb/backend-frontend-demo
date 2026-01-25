@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const URL = "http://localhost:8081/api/emp";
+const URL = "http://react-frontend-nodeport:30080/api/emp";
 
 export const listEmployees = () =>  axios.get(URL);
 
