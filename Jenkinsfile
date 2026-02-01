@@ -2,7 +2,7 @@ pipeline {
     agent any
 
     environment {
-        JAVA_HOME = "/usr/lib/jvm/java-17-openjdk-amd64"
+        JAVA_HOME = "/usr/lib/jvm/jaa-17-openjdk-amd64"
 
         BACKEND_DIR = "backend"
         FRONTEND_DIR = "frontend"
